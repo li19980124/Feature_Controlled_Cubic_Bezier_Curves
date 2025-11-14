@@ -11,15 +11,15 @@ from tkinter import ttk, messagebox
 # Global style
 STYLE_CONFIG = {
     'regular':
-        {'color': '#FF8A00', 'marker': 's', 'fill': False, 'size': 8, 'edge_width': 2},
+        {'color': '#FF8A00', 'marker': 's', 'fill': False, 'size': 14, 'edge_width': 2},
     'inflection':
-        {'color': '#0000FF', 'marker': '*', 'fill': False, 'size': 10, 'edge_width': 2},
+        {'color': '#0000FF', 'marker': '*', 'fill': False, 'size': 14, 'edge_width': 2},
     'loop':
-        {'color': '#00FF00', 'marker': 'o', 'fill': False, 'size': 8, 'edge_width': 2},
+        {'color': '#00FF00', 'marker': 'o', 'fill': False, 'size': 14, 'edge_width': 2},
     'cusp':
-        {'color': '#FF0000', 'marker': '^', 'fill': False, 'size': 8, 'edge_width': 2},
+        {'color': '#FF0000', 'marker': '^', 'fill': False, 'size': 14, 'edge_width': 2},
     'open_end':
-        {'color': 'black', 'marker': 's', 'fill': False, 'size': 10, 'edge_width': 2},
+        {'color': 'black', 'marker': 's', 'fill': False, 'size': 14, 'edge_width': 2},
     'selected':
         {'color': 'yellow', 'size_offset': 2, 'edge_color': 'black', 'edge_width': 2},
     'curve':
@@ -621,6 +621,7 @@ class FCaCurveDesigner:
         self.ax.set_ylim(0, 1200)
         self.ax.set_aspect('auto')
         self.ax.set_title("Curve design (click to add points, drag to adjust, right-click to select points)")
+        self.ax.axis('off')
         plt.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05)
         self.canvas.draw()
 
@@ -771,9 +772,11 @@ class FCaCurveDesigner:
         self.ax.set_xlim(0, 1200)
         self.ax.set_ylim(0, 1200)
         self.ax.set_aspect('auto')
+        self.ax.axis('off')
         plt.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05)
         self._redraw()
         self.status_var.set("Status: The view has been reset")
+
 
     def _on_mouse_press(self, event):
         if event.inaxes != self.ax:
@@ -1184,6 +1187,7 @@ class FCaCurveDesigner:
         self.ax.set_ylim(ylim)
         self.ax.set_aspect('auto')
         self.ax.set_title("Curve design (click to add points, drag to adjust, right-click to select points)")
+        self.ax.axis('off')
         plt.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05)
         self.canvas.draw()
 
