@@ -2,11 +2,13 @@
 Paper: Efficient Construction of Feature-Controlled Cubic Bézier Curves with Continuity.
 
 # Dependency installation
+
 ```pip install numpy matplotlib tkinter```
 
 # Running Steps
 1. Download the code and unzip it to a local directory.
 2. Enter the code directory and run the main program directly:
+
 ``` python Feature_Controlled_Cubic_Bezier_Curves.py```
 
 or use PyCharm
